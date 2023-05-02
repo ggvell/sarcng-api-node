@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@nestjs/core": "^9.4.0",
+    "@nestjs/testing": "^9.4.0"
+  }
+}
