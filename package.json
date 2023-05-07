@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@nestjs/core": "^9.4.0",
-    "@nestjs/testing": "^9.4.0"
+    "@nestjs/testing": "^9.4.0",
+    "class-validator": "^0.14.0"
   }
 }
