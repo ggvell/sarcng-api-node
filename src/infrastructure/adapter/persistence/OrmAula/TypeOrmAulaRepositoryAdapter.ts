@@ -10,7 +10,7 @@ export class TypeOrmAulaRepositoryAdapter
   extends BaseRepository<TypeOrmAula>
   implements AulaRepositoryPort
 {
-  private readonly aulaAlias: string = "aula";
+  private readonly aulaAlias: string = "Aula";
 
   public async getAula(id: number): Promise<Aula> {
     throw new Error("Method not implemented.");
@@ -25,7 +25,7 @@ export class TypeOrmAulaRepositoryAdapter
     const ormAula: TypeOrmAula = TypeOrmAulaMapper.toOrmEntity(Aula);
 
     const insertResult: InsertResult = await this.createQueryBuilder(
-      this.AulaAlias,
+      this.aulaAlias,
     )
       .insert()
       .into(TypeOrmAula)

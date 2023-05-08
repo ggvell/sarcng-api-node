@@ -1,4 +1,4 @@
-import { Aula } from "../../../core/domain/aula/entity/aula";
+import { Aula } from "../../../../core/domain/aula/entity/aula";
 import { TypeOrmAula } from "./TypeOrmAula";
 
 export class TypeOrmAulaMapper {

@@ -1,6 +1,6 @@
 import { Module } from "@nestjs/common";
-import { GetReservaService } from "src/core/service/get-reserva.service";
-import { TypeOrmReservaRepositoryAdapter } from "src/infrastructure/adapter/persistence/TypeOrmReservaRepositoryAdapter";
+import { GetReservaService } from "src/core/service/reserva/get-reserva.service";
+import { TypeOrmReservaRepositoryAdapter } from "src/infrastructure/adapter/persistence/OrmReserva/TypeOrmReservaRepositoryAdapter";
 import { ReservaController } from "../rest-api/reserva.controller";
 import { GetReservaUsecaseDI, ReservaRepositoryPortDI } from "./reserva.token";
 

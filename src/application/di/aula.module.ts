@@ -1,6 +1,6 @@
 import { Module } from "@nestjs/common";
 import { GetAulaService } from "src/core/service/aula/get-aula.service";
-import { TypeOrmAulaRepositoryAdapter } from "src/infrastructure/adapter/persistence/TypeOrmAulaRepositoryAdapter";
+import { TypeOrmAulaRepositoryAdapter } from "src/infrastructure/adapter/persistence/OrmAula/TypeOrmAulaRepositoryAdapter";
 import { AulaController } from "../rest-api/aula.controller";
 import { GetAulaUsecaseDI, AulaRepositoryPortDI } from "./aula.token";
 
