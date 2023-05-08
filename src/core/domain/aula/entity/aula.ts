@@ -2,6 +2,7 @@ import { IsDate, IsOptional } from "class-validator";
 import { Entity } from "../../../common/entity/Entity";
 import { RemovableEntity } from "../../../common/entity/RemovableEntity";
 import { Nullable } from "../../../common/type/CommonType";
+import { CreateAulaEntityPayload } from "./type/CreateAulaEntityPayload";
 
 export class Aula extends Entity<string> implements RemovableEntity {
     @IsDate()
@@ -14,8 +15,15 @@ export class Aula extends Entity<string> implements RemovableEntity {
     @IsOptional()
     @IsDate()
     private removedAt: Nullable<Date>;
+
+    @IsOptional()
+    @IsDate()
+    private publishedAt: Nullable<Date>;
+    contentAttr: string;
+    idAttr: number;
+    dateAttr: Date;
   
-    constructor(payload: CreateHelloEntityPayload) {
+    constructor(payload: CreateAulaEntityPayload) {
       super();
   
       this.id = payload.id || v4();
@@ -29,3 +37,7 @@ export class Aula extends Entity<string> implements RemovableEntity {
       throw new Error("Method not implemented.");
     }
   }
+
+function v4(): string {
+  throw new Error("Function not implemented.");
+}

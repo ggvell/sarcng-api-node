@@ -2,7 +2,7 @@ import { Aula } from "src/core/domain/aula/entity/aula";
 import { AulaRepositoryPort } from "src/core/domain/aula/port/repository/aula-repository.port";
 import { EntityRepository, InsertResult } from "typeorm";
 import { BaseRepository } from "typeorm-transactional-cls-hooked";
-import { TypeOrmAula } from "./TypeOrmAula.ts";
+import { TypeOrmAula } from "./TypeOrmAula";
 import { TypeOrmAulaMapper } from "./TypeOrmAulaMapper";
 
 @EntityRepository(TypeOrmAula)
