@@ -1,3 +1,3 @@
 export interface DeleteAulaUsecase {
-    execute(id: number): void;
+    execute(id: number): Promise<void>;
   }

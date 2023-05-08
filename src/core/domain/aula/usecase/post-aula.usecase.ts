@@ -1,3 +1,5 @@
+import { AulaDto } from "src/core/service/dto/aula.dto";
+
 export interface PostAulaUsecase {
-    execute(): void;
+  execute(data: AulaDto): Promise<AulaDto>;
   }

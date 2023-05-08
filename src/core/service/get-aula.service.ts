@@ -12,8 +12,8 @@ export class GetAulaService implements GetAulaUsecase {
     private readonly repository: AulaRepositoryPort,
   ) {}
 
-  public execute(id: number): AulaDto {
-    const Aula: Aula = this.repository.getAula(id);
-    return new AulaDto(Aula);
+  public async execute(id: number): Promise<AulaDto> {
+    const aula: Aula = await this.repository.getAula(id);
+    return new AulaDto(aula);
   }
 }
