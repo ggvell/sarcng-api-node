@@ -1,5 +1,5 @@
-import { AulaRepositoryPort } from "../domain/aula/port/repository/aula-repository.port";
-import { DeleteAulaUsecase } from "../domain/aula/usecase/delete-aula.usecase";
+import { AulaRepositoryPort } from "../../domain/aula/port/repository/aula-repository.port";
+import { DeleteAulaUsecase } from "../../domain/aula/usecase/delete-aula.usecase";
 
 
 export class DeleteAulaService implements DeleteAulaUsecase {
