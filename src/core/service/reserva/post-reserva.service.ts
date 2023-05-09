@@ -4,12 +4,13 @@ import { Reserva } from "../../domain/reserva/entity/reserva";
 import { ReservaRepositoryPort } from "../../domain/reserva/port/repository/reserva-repository.port";
 import { PostReservaUsecase } from "../../domain/reserva/usecase/post-reserva.usecase";
 import { ReservaDto } from "../dto/reserva.dto";
+import { CreateReservaEntityPayload } from "src/core/domain/reserva/entity/type/CreateReservaEntityPayload";
 
 export class PostReservaService implements PostReservaUsecase {
     constructor(private readonly repository: ReservaRepositoryPort) {}
   
-    public async execute(data: ReservaDto): Promise<ReservaDto> {
-      const reserva: Reserva = new Reserva();
+    public async execute(data: ReservaDto, payload: CreateReservaEntityPayload): Promise<ReservaDto> {
+      const reserva: Reserva = new Reserva(payload);
       reserva.observationAttr = data.observationAttr;
       reserva.dateCreationAttr = data.dateCreationAttr;
       reserva.dateValidityAttr = data.dateValidityAttr;
