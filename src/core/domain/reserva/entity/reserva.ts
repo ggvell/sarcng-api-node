@@ -19,9 +19,10 @@ export class Reserva extends Entity<string> implements RemovableEntity {
     @IsOptional()
     @IsDate()
     private publishedAt: Nullable<Date>;
-    contentAttr: string;
+    observationAttr: string;
     idAttr: number;
-    dateAttr: Date;
+    dateCreationAttr: Date;
+    dateValidityAttr: Date;
   
     constructor(payload: CreateReservaEntityPayload) {
       super();

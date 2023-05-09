@@ -10,8 +10,9 @@ export class PostReservaService implements PostReservaUsecase {
   
     public async execute(data: ReservaDto): Promise<ReservaDto> {
       const reserva: Reserva = new Reserva();
-      Reserva.contentAttr = data.contentAttr;
-      Reserva.dateAttr = data.dateAttr;
+      reserva.observationAttr = data.observationAttr;
+      reserva.dateCreationAttr = data.dateCreationAttr;
+      reserva.dateValidityAttr = data.dateValidityAttr;
       await this.repository.postReserva(reserva);
       return new ReservaDto(reserva);
     }
