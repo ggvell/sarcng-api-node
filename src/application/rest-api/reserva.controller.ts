@@ -5,6 +5,7 @@ import { ReservaRepositoryPortDI } from "../di/reserva.token";
 import { UpdateReservaUsecase } from "src/core/domain/reserva/usecase/update-reserva.usecase";
 import { DeleteReservaUsecase } from "src/core/domain/reserva/usecase/delete-reserva.usecase";
 import { PostReservaUsecase } from "src/core/domain/reserva/usecase/post-reserva.usecase";
+import { CreateReservaEntityPayload } from "src/core/domain/reserva/entity/type/CreateReservaEntityPayload";
 
 @Controller()
 export class ReservaController {
@@ -22,8 +23,8 @@ export class ReservaController {
   }
 
   @Post()
-  postReserva(@Body() ReservaDto: ReservaDto): Promise<ReservaDto>{
-    return this.postReservaUseCase.execute(ReservaDto);
+  postReserva(@Body() reservaDto: ReservaDto, payload: CreateReservaEntityPayload): Promise<ReservaDto>{
+    return this.postReservaUseCase.execute(reservaDto, payload);
   }
 
   @Put(':id')

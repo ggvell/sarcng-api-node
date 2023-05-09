@@ -5,6 +5,7 @@ import { DeleteAulaUsecase } from "src/core/domain/aula/usecase/delete-aula.usec
 import { PostAulaUsecase } from "src/core/domain/aula/usecase/post-aula.usecase";
 import { AulaDto } from "src/core/service/dto/aula.dto";
 import { AulaRepositoryPortDI } from "../di/aula.token";
+import { CreateAulaEntityPayload } from "src/core/domain/aula/entity/type/CreateAulaEntityPayload";
 
 @Controller()
 export class AulaController {
@@ -22,8 +23,8 @@ export class AulaController {
   }
 
   @Post()
-  postAula(@Body() AulaDto: AulaDto): Promise<AulaDto>{
-    return this.postAulaUseCase.execute(AulaDto);
+  postAula(@Body() aulaDto: AulaDto, payload: CreateAulaEntityPayload): Promise<AulaDto>{
+    return this.postAulaUseCase.execute(aulaDto, payload);
   }
 
   @Put(':id')
