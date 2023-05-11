@@ -8,4 +8,9 @@ O projeto faz parte da cadeira de Construção de Software, ministrada pelo prof
 
 Nessa entrega, os grupos deverão construir uma API na liguagem que preferirem de duas entidades do projeto. O grupo decidiu utilizar o framework Nest.js, por se tratar de uma linguagem que o grupo não tinha conhecimento prévio e quis utilizar da tarefa para aprendê-la. Utilizando uma arquitetura SOLID, fornecida pelo professor como boilerplate.
 
+## Entidades
+![](./screenshots/captura1.png)
+![](./screenshots/captura2.png)
 ## Arquitetura
+![](./screenshots/captura3.png)
+![](./screenshots/captura4.png)
