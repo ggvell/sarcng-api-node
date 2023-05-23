@@ -5,20 +5,9 @@ import { Nullable } from "../../../common/type/CommonType";
 import { CreateReservaEntityPayload } from "./type/CreateReservaEntityPayload";
 
 export class Reserva extends Entity<string> implements RemovableEntity {
-    @IsDate()
-    private readonly createdAt: Date;
-  
-    @IsOptional()
-    @IsDate()
-    private editedAt: Nullable<Date>;
-  
-    @IsOptional()
-    @IsDate()
-    private removedAt: Nullable<Date>;
 
     @IsOptional()
     @IsDate()
-    private publishedAt: Nullable<Date>;
     observationAttr: string;
     idAttr: number;
     dateCreationAttr: Date;
@@ -28,14 +17,25 @@ export class Reserva extends Entity<string> implements RemovableEntity {
       super();
   
       this.id = payload.id || v4();
-      this.createdAt = payload.createdAt || new Date();
-      this.editedAt = payload.editedAt || null;
-      this.publishedAt = payload.publishedAt || null;
-      this.removedAt = payload.removedAt || null;
+      this.observationAttr = payload.observation || null;
+      this.dateCreationAttr = payload.dateCreation || new Date();
+      this.dateValidityAttr = payload.dateValidity || new Date();
     }
   
     remove(): Promise<void> {
       throw new Error("Method not implemented.");
+    }
+
+    getObservation(){
+      return this.observationAttr;
+    }
+
+    getDateCreation(){
+      return this.dateCreationAttr;
+    }
+
+    getDateValidity(){
+      return this.dateValidityAttr;
     }
   }
 

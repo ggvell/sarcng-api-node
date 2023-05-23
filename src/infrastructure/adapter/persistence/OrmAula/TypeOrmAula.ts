@@ -6,17 +6,8 @@ export class TypeOrmAula {
   public id: string;
 
   @Column()
-  public title: string;
+  public content: string;
 
   @Column()
-  public createdAt: Date;
-
-  @Column()
-  public editedAt: Date;
-
-  @Column()
-  public publishedAt: Date;
-
-  @Column()
-  public removedAt: Date;
+  public date: Date;
 }

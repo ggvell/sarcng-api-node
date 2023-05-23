@@ -3,22 +3,12 @@ import { Entity } from "../../../common/entity/Entity";
 import { RemovableEntity } from "../../../common/entity/RemovableEntity";
 import { Nullable } from "../../../common/type/CommonType";
 import { CreateAulaEntityPayload } from "./type/CreateAulaEntityPayload";
+import { getDefaultSettings } from "http2";
 
 export class Aula extends Entity<string> implements RemovableEntity {
-    @IsDate()
-    private readonly createdAt: Date;
-  
-    @IsOptional()
-    @IsDate()
-    private editedAt: Nullable<Date>;
-  
-    @IsOptional()
-    @IsDate()
-    private removedAt: Nullable<Date>;
 
     @IsOptional()
     @IsDate()
-    private publishedAt: Nullable<Date>;
     contentAttr: string;
     idAttr: number;
     dateAttr: Date;
@@ -27,14 +17,20 @@ export class Aula extends Entity<string> implements RemovableEntity {
       super();
   
       this.id = payload.id || v4();
-      this.createdAt = payload.createdAt || new Date();
-      this.editedAt = payload.editedAt || null;
-      this.publishedAt = payload.publishedAt || null;
-      this.removedAt = payload.removedAt || null;
+      this.contentAttr = payload.content || null;
+      this.dateAttr = payload.date || new Date();
     }
   
     remove(): Promise<void> {
       throw new Error("Method not implemented.");
+    }
+
+    getContent(){
+      return this.contentAttr;
+    }
+
+    getDate(){
+      return this.dateAttr;
     }
   }
 

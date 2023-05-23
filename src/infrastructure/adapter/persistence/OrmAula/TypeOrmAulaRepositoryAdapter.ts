@@ -33,7 +33,9 @@ export class TypeOrmAulaRepositoryAdapter
       .execute();
 
     return {
-      id: insertResult.identifiers[0].id,
+      idAttr: insertResult.identifiers[0].idAttr,
+      contentAttr: insertResult.identifiers[0].contentAttr,
+      dateAttr: insertResult.identifiers[0].dateAttr,
     };
   }
   public async deleteAula(id: number): Promise<void> {

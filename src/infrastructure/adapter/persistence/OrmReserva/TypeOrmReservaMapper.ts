@@ -6,24 +6,19 @@ export class TypeOrmReservaMapper {
     const ormReserva: TypeOrmReserva = new TypeOrmReserva();
 
     ormReserva.id = domain.getId();
-    ormReserva.title = domain.getTitle();
-
-    ormReserva.createdAt = domain.getCreatedAt();
-    ormReserva.editedAt = domain.getEditedAt() as Date;
-    ormReserva.publishedAt = domain.getPublishedAt() as Date;
-    ormReserva.removedAt = domain.getRemovedAt() as Date;
+    ormReserva.observation = domain.getObservation();
+    ormReserva.dateCreation = domain.getDateCreation() as Date;
+    ormReserva.dateValidity = domain.getDateValidity() as Date;
 
     return ormReserva;
   }
 
   public static toDomainEntity(ormReserva: TypeOrmReserva): Reserva {
     const domain: Reserva = new Reserva({
-      title: ormReserva.title,
       id: ormReserva.id,
-      createdAt: ormReserva.createdAt,
-      editedAt: ormReserva.editedAt,
-      publishedAt: ormReserva.publishedAt,
-      removedAt: ormReserva.removedAt,
+      observation: ormReserva.observation,
+      dateCreation: ormReserva.dateCreation,
+      dateValidity: ormReserva.dateValidity,
     });
 
     return domain;

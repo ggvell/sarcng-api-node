@@ -6,24 +6,16 @@ export class TypeOrmAulaMapper {
     const ormAula: TypeOrmAula = new TypeOrmAula();
 
     ormAula.id = domain.getId();
-    ormAula.title = domain.getTitle();
-
-    ormAula.createdAt = domain.getCreatedAt();
-    ormAula.editedAt = domain.getEditedAt() as Date;
-    ormAula.publishedAt = domain.getPublishedAt() as Date;
-    ormAula.removedAt = domain.getRemovedAt() as Date;
-
+    ormAula.content = domain.getContent();
+    ormAula.date = domain.getDate() as Date;
     return ormAula;
   }
 
   public static toDomainEntity(ormAula: TypeOrmAula): Aula {
     const domain: Aula = new Aula({
-      title: ormAula.title,
       id: ormAula.id,
-      createdAt: ormAula.createdAt,
-      editedAt: ormAula.editedAt,
-      publishedAt: ormAula.publishedAt,
-      removedAt: ormAula.removedAt,
+      content: ormAula.content,
+      date: ormAula.date,
     });
 
     return domain;

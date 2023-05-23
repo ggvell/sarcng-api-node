@@ -6,17 +6,11 @@ export class TypeOrmReserva {
   public id: string;
 
   @Column()
-  public title: string;
+  public observation: string;
 
   @Column()
-  public createdAt: Date;
+  public dateCreation: Date;
 
   @Column()
-  public editedAt: Date;
-
-  @Column()
-  public publishedAt: Date;
-
-  @Column()
-  public removedAt: Date;
+  public dateValidity: Date;
 }
